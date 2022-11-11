@@ -1,6 +1,6 @@
 {
   "name": "get_national_egyption_id_info",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Here you can get your information with only your egyption national id",
   "main": "dist/index.js",
   "scripts": {
