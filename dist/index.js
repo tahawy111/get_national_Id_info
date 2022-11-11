@@ -64,5 +64,4 @@ function getIdentity(national, lang = "english") {
     };
 }
 exports.getIdentity = getIdentity;
-console.log(getIdentity("30601310200197"));
 //# sourceMappingURL=index.js.map

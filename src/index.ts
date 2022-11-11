@@ -68,6 +68,5 @@ function getIdentity(national: string, lang: "english" | "arabic" = "english") {
     },
   };
 }
-console.log(getIdentity("30601310200197"));
 
 export { getIdentity, isValid };
