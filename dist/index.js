@@ -3,13 +3,35 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.isValid = exports.getIdentity = void 0;
 const arabic_json_1 = __importDefault(require("./arabic.json"));
 const english_json_1 = __importDefault(require("./english.json"));
 const words = {
     arabic: ["ذكر", "أنثى", arabic_json_1.default],
     english: ["Male", "Female", english_json_1.default],
 };
-console.log(getIdentity("20004201800961"));
+function isValid(national_id = "0") {
+    var _a, _b, _c;
+    let data = getIdentity(national_id);
+    if ([
+        data.type,
+        data.century,
+        (_a = data.birthDate) === null || _a === void 0 ? void 0 : _a.day,
+        (_b = data.birthDate) === null || _b === void 0 ? void 0 : _b.year,
+        (_c = data.birthDate) === null || _c === void 0 ? void 0 : _c.month,
+        data.governorate,
+    ].some((v) => !v))
+        return false;
+    if (data.age && data.age < 0)
+        return false;
+    if (data.birthDate &&
+        data.birthDate.date &&
+        Date.now() - +new Date(data.birthDate.date) < 0)
+        return false;
+    else
+        return true;
+}
+exports.isValid = isValid;
 function getIdentity(national, lang = "english") {
     const century = national.slice(0, 1) === "2"
         ? "20"
@@ -41,4 +63,6 @@ function getIdentity(national, lang = "english") {
         },
     };
 }
+exports.getIdentity = getIdentity;
+console.log(getIdentity("30601310200197"));
 //# sourceMappingURL=index.js.map
