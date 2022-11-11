@@ -1,0 +1,27 @@
+{
+  "name": "get_national_id_info",
+  "version": "1.0.0",
+  "description": "Here you can get your information with only your egyption national id",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tahawy111/get_national_Id_info.git"
+  },
+  "keywords": [
+    "Get",
+    "information",
+    "with",
+    "egyption",
+    "national",
+    "id"
+  ],
+  "author": "Amer Tahawy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tahawy111/get_national_Id_info/issues"
+  },
+  "homepage": "https://github.com/tahawy111/get_national_Id_info#readme"
+}
