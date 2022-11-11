@@ -33,7 +33,34 @@ function isValid(national_id: string = "0"): boolean {
   else return true;
 }
 
-function getIdentity(national: string, lang: "english" | "arabic" = "english") {
+function getIdentity(
+  national: string,
+  lang: "english" | "arabic" = "english"
+):
+  | {
+      error: string;
+      type?: undefined;
+      century?: undefined;
+      age?: undefined;
+      national_id?: undefined;
+      birthDate?: undefined;
+      governorate?: undefined;
+    }
+  | {
+      type: string;
+      century: string | undefined;
+      age: number;
+      national_id: string;
+      birthDate: {
+        text: string;
+        date: Date;
+        day: string;
+        month: string;
+        year: string;
+      };
+      governorate: string;
+      error?: undefined;
+    } {
   const century: string | undefined =
     national.slice(0, 1) === "2"
       ? "20"
